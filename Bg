@@ -154,15 +154,15 @@ if not LPH_OBFUSCATED then
     end
 end
 
-local Game_Name = (game.PlaceId == 4991214437 and "Town") or (game.PlaceId == 18642421777 and "The Bronx") or (game.PlaceId == 16472538603 and "The Bronx") or (game.PlaceId == 13643807539 and "South Bronx") or (game.PlaceId == 93612682780562 and "South Bronx") or (game.PlaceId == 14413475235 and "South Bronx") or (game.PlaceId == 104715542330896 and "BlockSpin") or (game.PlaceId == 71600459831333 and "Street Life") or "Universal" or game.PlaceId == 13643807539
-
-if not getexecutorname then
-    getexecutorname = identifyexecutor
-end
-
-local Solara = string.match(getexecutorname(), "Solara") == "Solara" or string.match(getexecutorname(), "Xeno") == "Xeno" or getexecutorname() == string.match(getexecutorname(), "Zorara") == "Zorara";
-
-local cloneref = cloneref or function(...) return ... end
+local Game_Name = (game.PlaceId == 4991214437 and "Town") or
+                  (game.PlaceId == 18642421777 and "The Bronx") or
+                  (game.PlaceId == 16472538603 and "The Bronx") or
+                  (game.PlaceId == 13643807539 and "South Bronx") or
+                  (game.PlaceId == 93612682780562 and "South Bronx") or
+                  (game.PlaceId == 14413475235 and "South Bronx") or
+                  (game.PlaceId == 104715542330896 and "BlockSpin") or
+                  (game.PlaceId == 71600459831333 and "Street Life") or
+                  "Universal"local cloneref = cloneref or function(...) return ... end
 
 local Services = setmetatable({}, {
     __index = LPH_NO_VIRTUALIZE(function(self, service)
@@ -173,16 +173,15 @@ local Services = setmetatable({}, {
     end)
 })
 
-if Game_Name == "South Bronx" and not Solara then
-         local _getallthreads = LPH_JIT_MAX(function()
-            local threads = {}
-            for i, v in getreg() do
-                if type(v) == 'thread' then
-                    table.insert(threads, v)
-                end
-            end
-            return threads
-        end)
+local Game_Name = (game.PlaceId == 4991214437 and "Town") or
+                  (game.PlaceId == 18642421777 and "The Bronx") or
+                  (game.PlaceId == 16472538603 and "The Bronx") or
+                  (game.PlaceId == 13643807539 and "South Bronx") or
+                  (game.PlaceId == 93612682780562 and "South Bronx") or
+                  (game.PlaceId == 14413475235 and "South Bronx") or
+                  (game.PlaceId == 104715542330896 and "BlockSpin") or
+                  (game.PlaceId == 71600459831333 and "Street Life") or
+                  "Universal"
 
         local _gettenv = LPH_JIT_MAX(function(Thread)
             return getfenv(debug.info(Thread, 1, 'f'))
